@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitish Kumar - Resume</title>
+</head>
+<body>
+
+<div>
+  <button onclick="toggleCodeView()">Code</button>
+  <button onclick="openGit()">Git</button>
+</div>
+
+<div id="mainContent">
+    <!-- Header Section -->
+    <header>
+        <div>
+            <h1>Nitish Kumar</h1>
+            <p><strong>Full Stack Data Science and Web Dev Student</strong></p>
+        </div>
+        <img src="DP.png" alt="Nitish Kumar Profile Picture" width="150" height="150">
+    </header>
+
+    <hr>
+
+    <!-- About Me Section -->
+    <section>
+        <h2>About Me</h2>
+        <p>I am a passionate and driven Data Science student with a strong foundation in full-stack web development.</p>
+        <p>
+            I am enthusiastic about building innovative products that leverage data to create meaningful user experiences.</p>
+        <p> 
+             I am a quick learner, a collaborative team player, and I am always looking for new challenges to expand my skills.</p>
+    </section>
+
+    <hr>
+
+    <!-- Skills Section -->
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>Python</li>
+            <li>Data Science</li>
+            <li>Git & GitHub</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- Experience & Projects Section -->
+    <section>
+        <h2>Experience & Projects</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Project</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Hackathons & Technical Projects</td>
+                <td>
+                    <strong>Role:</strong> Student Developer<br>
+                    <strong>Focus:</strong> Web Development, AI/ML Project Frontend, Rapid Prototyping<br>
+                    • Participated in hackathons and coding challenges, building real-world style web interfaces.<br>
+                    • Integrated APIs and backend services to create dynamic and responsive applications.<br>
+                    • Excelled at rapid prototyping and debugging to deliver functional solutions under tight deadlines.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+
+  <!-- Projectz -->
+<div>
+  <h2>Projects</h2>
+  <div>
+    <h3>SecureVault (PC App Lock & Security System)</h3>
+    <p><b>Type:</b> Desktop Security Application</p>
+    <p><b>Technologies:</b> Python, Flask/FastAPI, HTML, CSS, JavaScript, MongoDB, Firebase, Windows Hello (C# Integration)</p>
+    <ul>
+      <li>Developed a secure PC application to lock and protect applications and files.</li>
+      <li>Implemented multi-layer authentication, including PIN, password, and biometric login.</li>
+      <li>Designed a modern, intuitive UI with smooth, iOS-like animations.</li>
+      <li>Built remote management and monitoring features for enhanced control.</li>
+      <li>Added stealth mode and uninstall protection for robust security.</li>
+      <li>Integrated mobile and desktop workflows for a seamless user experience.</li>
+    </ul>
+  </div>
+
+
+  
+  <div>
+    <h3>EduAI (AI-Powered Learning Platform)</h3>
+    <p><b>Type:</b> Web & Mobile Educational Platform</p>
+    <p><b>Technologies:</b> React, FastAPI, PostgreSQL, Firebase, Mistral OCR, HuggingFace, HTML, CSS, JavaScript</p>
+    <ul>
+      <li>Built an AI-powered learning platform to provide personalized education.</li>
+      <li>Implemented key features such as an AI tutor, flashcards, quizzes, and customized study plans.</li>
+      <li>Integrated OCR for handwritten test uploads and automated evaluation.</li>
+      <li>Incorporated gamification elements like badges, streaks, and leaderboards to enhance user engagement.</li>
+      <li>Developed teacher-student communication tools and live class modules.</li>
+      <li>Created analytics dashboards for tracking student progress and performance.</li>
+    </ul>
+  </div>
+</div>
+<hr>
+    <!-- Contact Information Section -->
+    <footer>
+        <h2>Contact Information</h2>
+        <address>
+            <p><strong>Email:</strong> <a href="mailto:nitishkumar44470@gmail.com">nitishkumar44470@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919117700000">+91 91177-XXXXX</a></p>
+            <p><strong>Location:</strong> <a href="https://www.google.com/maps/place/Bangalore,+Karnataka/" target="_blank">Bangalore, Karnataka</a></p>
+            <p><strong>Portfolio:</strong> <a href="https://your-portfolio.com" target="_blank">your-portfolio.com</a></p>
+        </address>
+    </footer>
+</div>
+
+<div id="codePanel" style="display:none; position:fixed; top:0; right:0; width:40%; height:100%; background:#f5f5f5; border-left:2px solid #000; overflow:auto; padding:10px;">
+  <h3>HTML Source Code</h3>
+  <pre id="codeContent"></pre>
+</div>
+
+<script>
+  function toggleCodeView() {
+    const panel = document.getElementById("codePanel");
+    const codeBox = document.getElementById("codeContent");
+
+    if (panel.style.display === "none") {
+      panel.style.display = "block";
+
+      // Show current page HTML source
+      codeBox.textContent = document.documentElement.outerHTML;
+    } else {
+      panel.style.display = "none";
+    }
+  }
+
+  function openGit() {
+    // 🔴 CHANGE THIS TO YOUR REAL GITHUB REPO LINK
+    window.open("https://github.com/StarkNitish/NIT_WEB.git", "_blank");
+  }
+</script>
+
+</body>
+</html>
