@@ -98,7 +98,7 @@
     <p><b>Technologies:</b> React, FastAPI, PostgreSQL, Firebase, Mistral OCR, HuggingFace, HTML, CSS, JavaScript</p>
     <ul>
       <li>Built an AI-powered learning platform to provide personalized education.</li>
-      <li>Implemented key features such as an AI tutor, flashcards, quizzes, and customized study plans.</li>
+      <li>Implemented key features suchs as an AI tutor, flashcards, quizzes, and customized study plans.</li>
       <li>Integrated OCR for handwritten test uploads and automated evaluation.</li>
       <li>Incorporated gamification elements like badges, streaks, and leaderboards to enhance user engagement.</li>
       <li>Developed teacher-student communication tools and live class modules.</li>
@@ -119,28 +119,48 @@
     </footer>
 </div>
 
-<div id="codePanel" style="display:none; position:fixed; top:0; right:0; width:40%; height:100%; background:#f5f5f5; border-left:2px solid #000; overflow:auto; padding:10px;">
+<div id="codePanel" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f5f5f5; border-left:2px solid #000; overflow:auto; padding:10px; box-sizing: border-box;">
   <h3>HTML Source Code</h3>
   <pre id="codeContent"></pre>
 </div>
 
 <script>
-  function toggleCodeView() {
+  async function toggleCodeView() {
     const panel = document.getElementById("codePanel");
     const codeBox = document.getElementById("codeContent");
+    const mainContent = document.getElementById("mainContent");
 
-    if (panel.style.display === "none") {
-      panel.style.display = "block";
+    const isHidden = panel.style.display === "none";
 
-      // Show current page HTML source
-      codeBox.textContent = document.documentElement.outerHTML;
+    if (isHidden) {
+      try {
+        const response = await fetch('resume.html');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const html = await response.text();
+        
+        // Parse the HTML and extract only the content inside the <body> tag
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const bodyContent = doc.body.innerHTML;
+
+        codeBox.textContent = bodyContent;
+        panel.style.display = "block";
+        mainContent.style.display = "none";
+      } catch (error) {
+        codeBox.textContent = 'Error loading code: ' + error;
+        panel.style.display = "block";
+        mainContent.style.display = "none";
+      }
     } else {
       panel.style.display = "none";
+      mainContent.style.display = "block";
     }
   }
 
   function openGit() {
-    // 🔴 CHANGE THIS TO YOUR REAL GITHUB REPO LINK
+    // Note: This may be blocked by your browser's pop-up blocker.
     window.open("https://github.com/StarkNitish/NIT_WEB.git", "_blank");
   }
 </script>
